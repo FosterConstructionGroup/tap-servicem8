@@ -1,0 +1,13 @@
+{
+  "type": ["null", "object"],
+  "additionalProperties": false,
+  "properties": {
+    "uuid": { "type": ["string"] },
+    "edit_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "name": { "type": ["null", "string"] },
+    "active": { "type": ["null", "boolean"] }
+  }
+}

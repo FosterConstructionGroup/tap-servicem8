@@ -1,0 +1,38 @@
+{
+  "type": ["null", "object"],
+  "additionalProperties": false,
+  "properties": {
+    "uuid": { "type": ["string"] },
+    "start_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "end_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "active": { "type": ["null", "boolean"] },
+    "activity_was_recorded": { "type": ["null", "boolean"] },
+    "edit_by_staff_uuid": { "type": ["null", "string"] },
+    "edit_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "job_uuid": { "type": ["null", "string"] },
+    "staff_uuid": { "type": ["null", "string"] },
+    "activity_was_scheduled": { "type": ["null", "boolean"] },
+    "has_been_opened": { "type": ["null", "boolean"] },
+    "has_been_opened_timestamp": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "travel_time_in_seconds": { "type": ["null", "string"] },
+    "travel_distance_in_meters": { "type": ["null", "string"] },
+    "material_uuid": { "type": ["null", "string"] },
+    "allocated_timestamp": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "allocated_by_staff_uuid": { "type": ["null", "string"] }
+  }
+}

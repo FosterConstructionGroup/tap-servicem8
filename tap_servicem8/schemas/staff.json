@@ -1,0 +1,16 @@
+{
+  "type": ["null", "object"],
+  "additionalProperties": false,
+  "properties": {
+    "uuid": { "type": ["string"] },
+    "first": { "type": ["null", "string"] },
+    "last": { "type": ["null", "string"] },
+    "active": { "type": ["null", "boolean"] },
+    "edit_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "job_title": { "type": ["null", "string"] },
+    "security_role_uuid": { "type": ["null", "string"] }
+  }
+}

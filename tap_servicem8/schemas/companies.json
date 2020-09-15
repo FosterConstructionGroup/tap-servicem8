@@ -1,0 +1,20 @@
+{
+  "type": ["null", "object"],
+  "additionalProperties": false,
+  "properties": {
+    "uuid": { "type": ["string"] },
+    "edit_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "name": { "type": ["null", "string"] },
+    "active": { "type": ["null", "boolean"] },
+    "is_individual": { "type": ["null", "boolean"] },
+    "tax_rate_uuid": { "type": ["null", "string"] },
+    "customfield_payment_terms": { "type": ["null", "string"] },
+    "customfield_quote": { "type": ["null", "string"] },
+    "parent_company_uuid": { "type": ["null", "string"] },
+    "payment_terms": { "type": ["null", "string"] },
+    "customfield_initial_estimate": { "type": ["null", "string"] }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "type": ["null", "object"],
+  "additionalProperties": false,
+  "properties": {
+    "uuid": { "type": ["string"] },
+    "active": { "type": ["null", "boolean"] },
+    "date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "job_address": { "type": ["null", "string"] },
+    "billing_address": { "type": ["null", "string"] },
+    "status": { "type": ["null", "string"] },
+    "quote_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "work_order_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "work_done_description": { "type": ["null", "string"] },
+    "lng": { "type": ["null", "number"] },
+    "lat": { "type": ["null", "number"] },
+    "generated_job_id": { "type": ["null", "string"] },
+    "completion_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "completion_actioned_by_uuid": { "type": ["null", "string"] },
+    "unsuccessful_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "payment_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "payment_method": { "type": ["null", "string"] },
+    "payment_amount": { "type": ["null", "number"] },
+    "payment_actioned_by_uuid": { "type": ["null", "string"] },
+    "edit_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "geo_is_valid": { "type": ["null", "boolean"] },
+    "payment_note": { "type": ["null", "string"] },
+    "ready_to_invoice": { "type": ["null", "boolean"] },
+    "ready_to_invoice_stamp": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "company_uuid": { "type": ["null", "string"] },
+    "geo_country": { "type": ["null", "string"] },
+    "geo_postcode": { "type": ["null", "string"] },
+    "geo_state": { "type": ["null", "string"] },
+    "geo_city": { "type": ["null", "string"] },
+    "geo_street": { "type": ["null", "string"] },
+    "geo_number": { "type": ["null", "string"] },
+    "payment_processed": { "type": ["null", "boolean"] },
+    "payment_processed_stamp": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "payment_received": { "type": ["null", "boolean"] },
+    "payment_received_stamp": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "total_invoice_amount": { "type": ["null", "string"] },
+    "job_is_scheduled_until_stamp": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "category_uuid": { "type": ["null", "string"] },
+    "queue_uuid": { "type": ["null", "string"] },
+    "queue_expiry_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "invoice_sent": { "type": ["null", "boolean"] },
+    "purchase_order_number": { "type": ["null", "string"] },
+    "invoice_sent_stamp": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "customfield_xero_tracking_cat_1": { "type": ["null", "string"] },
+    "customfield_xero_tracking_cat_2": { "type": ["null", "string"] },
+    "customfield_quote": { "type": ["null", "string"] },
+    "customfield_owner": { "type": ["null", "string"] },
+    "customfield_likelihood": { "type": ["null", "string"] },
+    "customfield_pm": { "type": ["null", "string"] },
+    "customfield_sm": { "type": ["null", "string"] },
+    "customfield_site_staff": { "type": ["null", "string"] },
+    "customfield_qs": { "type": ["null", "string"] },
+    "customfield_project_manager": { "type": ["null", "string"] },
+    "customfield_site_manager": { "type": ["null", "string"] },
+    "customfield_quantity_surveyor": { "type": ["null", "string"] },
+    "customfield_start_date": { "type": ["null", "string"] },
+    "customfield_duration_weeks": { "type": ["null", "string"] },
+    "customfield_billing_process": { "type": ["null", "string"] },
+    "customfield_initial_estimate": { "type": ["null", "string"] },
+    "job_description": { "type": ["null", "string"] },
+    "created_by_staff_uuid": { "type": ["null", "string"] }
+  }
+}

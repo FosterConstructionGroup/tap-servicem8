@@ -1,0 +1,23 @@
+{
+  "type": ["null", "object"],
+  "additionalProperties": false,
+  "properties": {
+    "uuid": { "type": ["string"] },
+    "tax_rate_uuid": { "type": ["null", "string"] },
+    "quantity": { "type": ["null", "string"] },
+    "name": { "type": ["null", "string"] },
+    "price": { "type": ["null", "string"] },
+    "active": { "type": ["null", "boolean"] },
+    "displayed_amount_is_tax_inclusive": { "type": ["null", "boolean"] },
+    "displayed_amount": { "type": ["null", "string"] },
+    "edit_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "job_uuid": { "type": ["string"] },
+    "material_uuid": { "type": ["string"] },
+    "job_address": { "type": ["null", "string"] },
+    "cost": { "type": ["null", "string"] },
+    "displayed_cost": { "type": ["null", "string"] }
+  }
+}
