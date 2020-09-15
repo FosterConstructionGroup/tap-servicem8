@@ -47,7 +47,7 @@ def get_resource(resource, start=0):
         resp.raise_for_status()
 
         timer.tags[metrics.Tag.http_status_code] = resp.status_code
-        return resp
+        return resp.json()
 
 
 def formatDate(dt):

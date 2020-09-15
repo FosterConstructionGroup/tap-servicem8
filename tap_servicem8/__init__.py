@@ -8,7 +8,7 @@ from tap_servicem8.fetch import handle_resource
 
 logger = singer.get_logger()
 
-REQUIRED_CONFIG_KEYS = ["api_key"]
+REQUIRED_CONFIG_KEYS = ["username", "password"]
 
 
 def load_schemas():
@@ -93,7 +93,7 @@ def get_stream_from_catalog(stream_id, catalog):
 
 
 def do_sync(config, state, catalog):
-    session.headers.update({"Authorization": "Bearer " + config["api_key"]})
+    session.auth = (config["username"], config["password"])
 
     selected_stream_ids = get_selected_streams(catalog)
 
