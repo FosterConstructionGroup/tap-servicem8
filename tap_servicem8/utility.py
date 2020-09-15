@@ -18,13 +18,25 @@ class NotFoundException(Exception):
 # constants
 baseUrl = "https://api.servicem8.com/api_1.0"
 
+endpoints = {
+    "categories": "category",
+    "companies": "company",
+    "job_activities": "jobactivity",
+    "job_materials": "jobmaterial",
+    "jobs": "job",
+}
 
-def get_resource(source, resource, start=0):
-    with metrics.http_request_timer(source) as timer:
+
+def get_resource(resource, start=0):
+    if start == None:
+        start = 0
+
+    with metrics.http_request_timer(resource) as timer:
         session.headers.update()
+
         resp = session.request(
             method="get",
-            url="{}{}?$filter=edit_date gt '{}'".format(baseUrl, resource, start),
+            url=f"{baseUrl}/{endpoints[resource]}.json?$filter=edit_date gt '{start}'",
         )
         if resp.status_code == 401:
             raise AuthException(resp.text)
@@ -32,6 +44,7 @@ def get_resource(source, resource, start=0):
             raise AuthException(resp.text)
         if resp.status_code == 404:
             raise NotFoundException(resp.text)
+        resp.raise_for_status()
 
         timer.tags[metrics.Tag.http_status_code] = resp.status_code
         return resp
