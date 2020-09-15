@@ -50,6 +50,25 @@ def get_resource(resource, start=0):
         return resp.json()
 
 
+def transform_record(record, properties):
+    for key in record:
+        if key in properties:
+            prop = properties.get(key)
+            # Blank dates aren't returned as null
+            if (
+                prop.get("format") == "date-time"
+                and record[key] == "0000-00-00 00:00:00"
+            ):
+                record[key] = None
+            # booleans are sometimes int {1,0}, which Singer transform handles fine
+            # but sometimes are string {"1", "0"}, which Singer always transforms to True
+            # so always explicitly parse to int first
+            if (prop.get("type")[-1]) == "boolean":
+                record[key] = bool(int(record[key]))
+
+    return record
+
+
 def formatDate(dt):
     return datetime.strftime(dt, "%Y-%m-%d %H:%M:%S")
 

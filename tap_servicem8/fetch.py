@@ -2,13 +2,16 @@ import singer
 import singer.metrics as metrics
 from singer import metadata
 from singer.bookmarks import get_bookmark
-from tap_servicem8.utility import get_resource, formatDate
+from tap_servicem8.utility import get_resource, transform_record, formatDate
 
 
 def handle_resource(resource, schema, state, mdata):
     bookmark = get_bookmark(state, resource, "since")
     extraction_time = singer.utils.now()
-    rows = get_resource(resource, bookmark)
+    rows = [
+        transform_record(row, schema["properties"])
+        for row in get_resource(resource, bookmark)
+    ]
 
     write_many(rows, resource, schema, mdata, extraction_time)
     return write_bookmark(state, resource, extraction_time)
