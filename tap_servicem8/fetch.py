@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 import singer
 import singer.metrics as metrics
 from singer import metadata
@@ -7,7 +8,9 @@ from tap_servicem8.utility import get_resource, transform_record, formatDate
 
 def handle_resource(resource, schema, state, mdata):
     bookmark = get_bookmark(state, resource, "since")
-    extraction_time = singer.utils.now()
+    # Current time in local timezone as "aware datetime", per https://stackoverflow.com/a/25887393/7170445
+    extraction_time = datetime.now(timezone.utc).astimezone()
+
     rows = [
         transform_record(row, schema["properties"])
         for row in get_resource(resource, bookmark)
