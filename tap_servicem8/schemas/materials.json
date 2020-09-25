@@ -1,0 +1,20 @@
+{
+  "type": ["null", "object"],
+  "additionalProperties": false,
+  "properties": {
+    "uuid": { "type": ["string"] },
+    "name": { "type": ["null", "string"] },
+    "price": { "type": ["null", "string"] },
+    "active": { "type": ["null", "boolean"] },
+    "cost": { "type": ["null", "string"] },
+    "item_number": { "type": ["null", "string"] },
+    "quantity_in_stock": { "type": ["null", "integer"] },
+    "price_includes_taxes": { "type": ["null", "boolean"] },
+    "item_is_inventoried": { "type": ["null", "boolean"] },
+    "edit_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "tax_rate_uuid": { "type": ["null", "string"] }
+  }
+}

@@ -25,6 +25,7 @@ endpoints = {
     "job_materials": "jobmaterial",
     "jobs": "job",
     "staff": "staff",
+    "materials": "material",
 }
 
 
