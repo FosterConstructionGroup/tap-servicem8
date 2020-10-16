@@ -4,9 +4,9 @@
   "properties": {
     "uuid": { "type": ["string"] },
     "name": { "type": ["null", "string"] },
-    "price": { "type": ["null", "string"] },
+    "price": { "type": ["null", "number"] },
     "active": { "type": ["null", "boolean"] },
-    "cost": { "type": ["null", "string"] },
+    "cost": { "type": ["null", "number"] },
     "item_number": { "type": ["null", "string"] },
     "quantity_in_stock": { "type": ["null", "integer"] },
     "price_includes_taxes": { "type": ["null", "boolean"] },

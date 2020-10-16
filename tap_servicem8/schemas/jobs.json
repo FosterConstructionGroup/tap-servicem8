@@ -67,7 +67,7 @@
       "type": ["null", "string"],
       "format": "date-time"
     },
-    "total_invoice_amount": { "type": ["null", "string"] },
+    "total_invoice_amount": { "type": ["null", "number"] },
     "job_is_scheduled_until_stamp": {
       "type": ["null", "string"],
       "format": "date-time"
@@ -86,7 +86,7 @@
     },
     "customfield_xero_tracking_cat_1": { "type": ["null", "string"] },
     "customfield_xero_tracking_cat_2": { "type": ["null", "string"] },
-    "customfield_quote": { "type": ["null", "string"] },
+    "customfield_quote": { "type": ["null", "number"] },
     "customfield_owner": { "type": ["null", "string"] },
     "customfield_likelihood": { "type": ["null", "string"] },
     "customfield_pm": { "type": ["null", "string"] },
@@ -99,7 +99,7 @@
     "customfield_start_date": { "type": ["null", "string"] },
     "customfield_duration_weeks": { "type": ["null", "string"] },
     "customfield_billing_process": { "type": ["null", "string"] },
-    "customfield_initial_estimate": { "type": ["null", "string"] },
+    "customfield_initial_estimate": { "type": ["null", "number"] },
     "job_description": { "type": ["null", "string"] },
     "created_by_staff_uuid": { "type": ["null", "string"] }
   }

@@ -6,7 +6,7 @@
     "tax_rate_uuid": { "type": ["null", "string"] },
     "quantity": { "type": ["null", "string"] },
     "name": { "type": ["null", "string"] },
-    "price": { "type": ["null", "string"] },
+    "price": { "type": ["null", "number"] },
     "active": { "type": ["null", "boolean"] },
     "displayed_amount_is_tax_inclusive": { "type": ["null", "boolean"] },
     "displayed_amount": { "type": ["null", "string"] },
@@ -17,7 +17,7 @@
     "job_uuid": { "type": ["string"] },
     "material_uuid": { "type": ["string"] },
     "job_address": { "type": ["null", "string"] },
-    "cost": { "type": ["null", "string"] },
+    "cost": { "type": ["null", "number"] },
     "displayed_cost": { "type": ["null", "string"] }
   }
 }
