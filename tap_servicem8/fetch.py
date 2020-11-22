@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+import re
 import singer
 import singer.metrics as metrics
 from singer import metadata
@@ -16,8 +17,21 @@ def handle_resource(resource, schema, state, mdata):
         for row in get_resource(resource, bookmark)
     ]
 
+    if resource == "job_materials":
+        rows = handle_job_materials(rows)
+
     write_many(rows, resource, schema, mdata, extraction_time)
     return write_bookmark(state, resource, extraction_time)
+
+
+def handle_job_materials(rows):
+    date_regex = re.compile(r"(\d{2}\/\d{2}\/\d{4})")
+    for r in rows:
+        d = date_regex.search(r["name"])
+        if d is not None:
+            r["parsed_date"] = d.group()
+
+    return rows
 
 
 def write_many(rows, resource, schema, mdata, dt):

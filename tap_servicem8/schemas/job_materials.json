@@ -10,6 +10,10 @@
     "active": { "type": ["null", "boolean"] },
     "displayed_amount_is_tax_inclusive": { "type": ["null", "boolean"] },
     "displayed_amount": { "type": ["null", "string"] },
+    "parsed_date": {
+      "type": ["null", "string"],
+      "format": "date"
+    },
     "edit_date": {
       "type": ["null", "string"],
       "format": "date-time"
