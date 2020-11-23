@@ -71,8 +71,16 @@ def transform_record(record, properties):
     return record
 
 
-def formatDate(dt):
-    return datetime.strftime(dt, "%Y-%m-%d %H:%M:%S")
+date_format = "%Y-%m-%d"
+datetime_format = "%Y-%m-%d %H:%M:%S"
+
+
+def format_date(dt, format=datetime_format):
+    return datetime.strftime(dt, format)
+
+
+def parse_date(dt, format=date_format):
+    return datetime.strptime(dt, format)
 
 
 def get_abs_path(path):

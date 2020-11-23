@@ -4,7 +4,13 @@ import singer
 import singer.metrics as metrics
 from singer import metadata
 from singer.bookmarks import get_bookmark
-from tap_servicem8.utility import get_resource, transform_record, formatDate
+from tap_servicem8.utility import (
+    get_resource,
+    transform_record,
+    parse_date,
+    format_date,
+    date_format,
+)
 
 
 def handle_resource(resource, schema, state, mdata):
@@ -29,7 +35,9 @@ def handle_job_materials(rows):
     for r in rows:
         d = date_regex.search(r["name"])
         if d is not None:
-            r["parsed_date"] = d.group()
+            r["parsed_date"] = format_date(
+                parse_date(d.group(), "%d/%m/%Y"), date_format
+            )
 
     return rows
 
@@ -48,5 +56,5 @@ def write_record(row, resource, schema, mdata, dt):
 
 
 def write_bookmark(state, resource, dt):
-    singer.write_bookmark(state, resource, "since", formatDate(dt))
+    singer.write_bookmark(state, resource, "since", format_date(dt))
     return state
