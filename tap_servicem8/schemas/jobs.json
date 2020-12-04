@@ -96,10 +96,10 @@
     "customfield_project_manager": { "type": ["null", "string"] },
     "customfield_site_manager": { "type": ["null", "string"] },
     "customfield_quantity_surveyor": { "type": ["null", "string"] },
-    "customfield_start_date": { "type": ["null", "string"] },
-    "customfield_duration_weeks": { "type": ["null", "string"] },
+    "customfield_start_date": { "type": ["null", "string"], "format": "date" },
     "customfield_billing_process": { "type": ["null", "string"] },
     "customfield_initial_estimate": { "type": ["null", "number"] },
+    "customfield_date_closed": { "type": ["null", "string"], "format": "date" },
     "job_description": { "type": ["null", "string"] },
     "created_by_staff_uuid": { "type": ["null", "string"] }
   }
