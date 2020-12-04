@@ -62,6 +62,10 @@ def transform_record(record, properties):
                 and record[key] == "0000-00-00 00:00:00"
             ):
                 record[key] = None
+
+            if prop.get("format") == "date" and record[key] == "0000-00-00":
+                record[key] = None
+
             # booleans are sometimes int {1,0}, which Singer transform handles fine
             # but sometimes are string {"1", "0"}, which Singer always transforms to True
             # so always explicitly parse to int first
