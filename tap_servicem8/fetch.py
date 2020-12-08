@@ -32,12 +32,20 @@ def handle_resource(resource, schema, state, mdata):
 
 def handle_job_materials(rows):
     date_regex = re.compile(r"(\d{2}\/\d{2}\/\d{4})")
+    po_regex = re.compile(r"PO=(\S+)")
+    inv_regex = re.compile(r"INV=(\S+)")
     for r in rows:
         d = date_regex.search(r["name"])
         if d is not None:
             r["parsed_date"] = format_date(
                 parse_date(d.group(), "%d/%m/%Y"), date_format
             )
+        p = po_regex.search(r["name"])
+        if p is not None:
+            r["purchase_order_reference"] = p.group(1)
+        inv = inv_regex.search(r["name"])
+        if inv is not None:
+            r["invoice_reference"] = inv.group(1)
 
     return rows
 
