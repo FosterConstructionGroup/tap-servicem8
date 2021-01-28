@@ -25,6 +25,8 @@ def handle_resource(resource, schema, state, mdata):
 
     if resource == "job_materials":
         rows = handle_job_materials(rows)
+    elif resource == "queue":
+        rows = handle_queue(rows)
 
     write_many(rows, resource, schema, mdata, extraction_time)
     return write_bookmark(state, resource, extraction_time)
@@ -47,6 +49,16 @@ def handle_job_materials(rows):
         if inv is not None:
             r["invoice_reference"] = inv.group(1)
 
+    return rows
+
+
+def handle_queue(rows):
+    order_regex = re.compile(r"(\d{2})\s")
+
+    for r in rows:
+        o = order_regex.search(r["name"])
+        if o is not None:
+            r["order"] = o.group(1)
     return rows
 
 

@@ -1,0 +1,15 @@
+{
+  "type": ["null", "object"],
+  "additionalProperties": false,
+  "properties": {
+    "uuid": { "type": ["string"] },
+    "active": { "type": ["null", "boolean"] },
+    "edit_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "name": { "type": ["string"] },
+    "order": { "type": ["null", "integer"] },
+    "default_timeframe": { "type": ["integer"] }
+  }
+}
