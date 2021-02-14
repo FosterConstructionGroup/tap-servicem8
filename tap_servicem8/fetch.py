@@ -36,6 +36,7 @@ def handle_job_materials(rows):
     date_regex = re.compile(r"(\d{2}\/\d{2}\/\d{4})")
     po_regex = re.compile(r"PO=(\S+)")
     inv_regex = re.compile(r"INV=(\S+)")
+    supplier_regex = re.compile(r"SCD=(\S+)")
     for r in rows:
         d = date_regex.search(r["name"])
         if d is not None:
@@ -48,6 +49,9 @@ def handle_job_materials(rows):
         inv = inv_regex.search(r["name"])
         if inv is not None:
             r["invoice_reference"] = inv.group(1)
+        supplier = supplier_regex.search(r["name"])
+        if supplier is not None:
+            r["supplier_code"] = supplier.group(1)
 
     return rows
 

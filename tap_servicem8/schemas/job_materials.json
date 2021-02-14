@@ -24,6 +24,7 @@
     "cost": { "type": ["null", "number"] },
     "displayed_cost": { "type": ["null", "string"] },
     "purchase_order_reference": { "type": ["null", "string"] },
-    "invoice_reference": { "type": ["null", "string"] }
+    "invoice_reference": { "type": ["null", "string"] },
+    "supplier_code": { "type": ["null", "string"] }
   }
 }
