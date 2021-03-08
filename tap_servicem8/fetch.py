@@ -1,5 +1,6 @@
 from datetime import datetime, timezone
 import re
+import json
 import singer
 import singer.metrics as metrics
 from singer import metadata
@@ -11,6 +12,13 @@ from tap_servicem8.utility import (
     format_date,
     date_format,
 )
+
+
+columns_with_escape_characters = {
+    "jobs": ["job_description", "work_done_description"],
+    "job_materials": ["name"],
+    "materials": ["name"],
+}
 
 
 def handle_resource(resource, schema, state, mdata):
@@ -27,6 +35,13 @@ def handle_resource(resource, schema, state, mdata):
         rows = handle_job_materials(rows)
     elif resource == "queue":
         rows = handle_queue(rows)
+
+    # see https://www.notion.so/fosters/pipelinewise-target-redshift-strips-newlines-f937185a6aec439dbbdae0e9703f834b
+    if resource in columns_with_escape_characters:
+        cols = columns_with_escape_characters[resource]
+        for r in rows:
+            for c in cols:
+                r[c] = json.dumps(r[c])
 
     write_many(rows, resource, schema, mdata, extraction_time)
     return write_bookmark(state, resource, extraction_time)
