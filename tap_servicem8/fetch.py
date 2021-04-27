@@ -49,7 +49,7 @@ def handle_resource(resource, schema, state, mdata):
 
 def handle_job_materials(rows):
     date_regex = re.compile(r"(\d{2}\/\d{2}\/\d{4})")
-    po_regex = re.compile(r"PO=(\S+)")
+    po_regex = re.compile(r"PO(?:=|# )(\S+)")
     inv_regex = re.compile(r"INV=(\S+)")
     supplier_regex = re.compile(r"SCD=(\S+)")
     for r in rows:
