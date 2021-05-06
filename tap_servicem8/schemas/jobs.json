@@ -99,7 +99,7 @@
     "customfield_start_date": { "type": ["null", "string"], "format": "date" },
     "customfield_billing_process": { "type": ["null", "string"] },
     "customfield_initial_estimate": { "type": ["null", "number"] },
-    "customfield_date_closed": { "type": ["null", "string"], "format": "date" },
+    "customfield_date_invoiced": { "type": ["null", "string"], "format": "date" },
     "job_description": { "type": ["null", "string"] },
     "created_by_staff_uuid": { "type": ["null", "string"] }
   }
