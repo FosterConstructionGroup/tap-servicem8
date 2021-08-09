@@ -11,6 +11,7 @@ from tap_servicem8.utility import (
     parse_date,
     format_date,
     date_format,
+    try_parse_date,
 )
 
 
@@ -31,6 +32,8 @@ def handle_resource(resource, schema, state, mdata):
         for row in get_resource(resource, bookmark)
     ]
 
+    if resource == "jobs":
+        rows = handle_jobs(rows)
     if resource == "job_materials":
         rows = handle_job_materials(rows)
     elif resource == "queue":
@@ -45,6 +48,15 @@ def handle_resource(resource, schema, state, mdata):
 
     write_many(rows, resource, schema, mdata, extraction_time)
     return write_bookmark(state, resource, extraction_time)
+
+
+def handle_jobs(rows):
+    for r in rows:
+        split = r.get("customfield_start_date_to_end_date", "").split(" to ")
+        r["customfield_date_start"] = try_parse_date(split[0])
+        if len(split) > 1:
+            r["customfield_date_end"] = try_parse_date(split[1])
+    return rows
 
 
 def handle_job_materials(rows):

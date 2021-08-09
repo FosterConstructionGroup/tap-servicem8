@@ -88,5 +88,12 @@ def parse_date(dt, format=date_format):
     return datetime.strptime(dt, format)
 
 
+def try_parse_date(s):
+    try:
+        return format_date(parse_date(s, date_format), date_format)
+    except:
+        return None
+
+
 def get_abs_path(path):
     return os.path.join(os.path.dirname(os.path.realpath(__file__)), path)
