@@ -53,9 +53,9 @@ def handle_resource(resource, schema, state, mdata):
 def handle_jobs(rows):
     for r in rows:
         split = r.get("customfield_start_date_to_end_date", "").split(" to ")
-        r["customfield_date_start"] = try_parse_date(split[0])
+        r["customfield_date_start"] = try_parse_date(split[0], "%d/%m/%Y")
         if len(split) > 1:
-            r["customfield_date_end"] = try_parse_date(split[1])
+            r["customfield_date_end"] = try_parse_date(split[1], "%d/%m/%Y")
     return rows
 
 

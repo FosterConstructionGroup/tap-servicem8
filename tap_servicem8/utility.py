@@ -88,9 +88,9 @@ def parse_date(dt, format=date_format):
     return datetime.strptime(dt, format)
 
 
-def try_parse_date(s):
+def try_parse_date(s, parse_format=date_format):
     try:
-        return format_date(parse_date(s, date_format), date_format)
+        return format_date(parse_date(s, parse_format), date_format)
     except:
         return None
 
