@@ -22,6 +22,7 @@ endpoints = {
     "categories": "category",
     "companies": "company",
     "job_activities": "jobactivity",
+    "job_contacts": "jobcontact",
     "job_materials": "jobmaterial",
     "jobs": "job",
     "staff": "staff",

@@ -1,0 +1,19 @@
+{
+  "type": ["null", "object"],
+  "additionalProperties": false,
+  "properties": {
+    "uuid": { "type": ["string"] },
+    "job_uuid": { "type": ["string"] },
+    "first": { "type": ["null", "string"] },
+    "last": { "type": ["null", "string"] },
+    "email": { "type": ["null", "string"] },
+    "phone": { "type": ["null", "string"] },
+    "mobile": { "type": ["null", "string"] },
+    "type": { "type": ["null", "string"] },
+    "active": { "type": ["null", "boolean"] },
+    "edit_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    }
+  }
+}
