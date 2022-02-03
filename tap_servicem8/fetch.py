@@ -16,7 +16,7 @@ from tap_servicem8.utility import (
 
 
 columns_with_escape_characters = {
-    "jobs": ["job_description", "work_done_description"],
+    "jobs": ["job_description", "work_done_description", "job_address"],
     "job_materials": ["name"],
     "materials": ["name"],
 }
